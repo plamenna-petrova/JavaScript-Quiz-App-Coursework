@@ -1,0 +1,58 @@
+
+#rulesAccordion {
+    color: #ff8000;
+}
+
+.accordion {
+    background-color: #fff;
+    color: #ff8000;
+    cursor: pointer;
+    padding: 1.8rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5rem;
+    transition: 0.4s;
+    font-weight: 500;
+}
+
+.active, .accordion:hover {
+    background-color: #ff9933;
+    color: #fff;
+}
+
+.accordion::after {
+    content: '\002B';
+    color: #ff8000;
+    font-weight: bold;
+    float: right;
+    margin-left: 0.5rem;
+}
+
+.accordion:hover::after {
+    color: #fff;
+}
+
+.active:after {
+    content: "\2212";
+    color: #fff;
+}
+
+.panel {
+    padding: 0rem 1.8rem;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p {
+    font-size: 1.4rem;
+    padding: 1.5rem 0rem;
+    font-weight: 500;
+}
+
+#goBack {
+    margin-top: 2rem;
+}
