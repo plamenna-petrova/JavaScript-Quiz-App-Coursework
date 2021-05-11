@@ -58,7 +58,10 @@ startGame = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
-    timer();
+    // timer();
+    var minutes = 90;
+    var display = document.getElementById("timerCountdown");
+    startTimer(minutes, display);
     game.classList.remove("hidden");
     loader.classList.add("hidden");
 };
@@ -116,15 +119,38 @@ incrementScore = num => {
     scoreText.innerHTML = score;
 }
 
-function timer() {
-    var seconds = 59;
-    var timer = setInterval(function () {
-        document.getElementById("timerCountdown").innerHTML = "0:" + seconds;
-        seconds--;
-        if (seconds < 0) {
-            clearInterval(timer);
+// simple timer
+
+// function timer() {
+//     var seconds = 59;
+//     var timer = setInterval(function () {
+//         document.getElementById("timerCountdown").innerHTML = "0:" + seconds;
+//         seconds--;
+//         if (seconds < 0) {
+//             clearInterval(timer);
+//             localStorage.setItem("mostRecentScore", score);
+//             return window.location.assign('/html/end.html');
+//         }
+//     }, 1000);
+// }
+
+// complex timer
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.innerText = minutes + ":" + seconds;
+
+        if (--timer < 0){
+            clearInterval();
             localStorage.setItem("mostRecentScore", score);
             return window.location.assign('/html/end.html');
         }
     }, 1000);
 }
+
