@@ -14,7 +14,7 @@ descendingly. Futhermore, during the game the points are refreshed after every q
 
 ## How to configure the project
 
-Open Visual Studio Code and install the Live Server extension. Click on the Live Server button below and the project will be hosted on a localhost port. Run the Live Server
+Open Visual Studio Code and install the Live Server extension. Click on the Go Live button below and the project will be hosted on a localhost port. Run the Live Server
 from the index.html page, standing for the home layout.
 
 ## The project
